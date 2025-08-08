@@ -1,9 +1,8 @@
 import {
-    UserPersistedValues,
-    UserPersistentOverrideAdapter,
-    UserPersistentStorage,
+  UserPersistedValues,
+  UserPersistentOverrideAdapter,
+  UserPersistentStorage,
 } from '@statsig/js-user-persisted-storage';
-import { Platform } from 'react-native';
 import { MMKV } from 'react-native-mmkv';
 
 class MMKVUserPersistedStorage implements UserPersistentStorage {
@@ -59,10 +58,8 @@ export function getUserPersistentOverrideAdapter(): UserPersistentOverrideAdapte
     return adapter;
   }
   
-  // Use localStorage for web, MMKV for native platforms
-  const storage = Platform.OS === 'web' 
-    ? new LocalStorageUserPersistedStorage()
-    : new MMKVUserPersistedStorage();
+  // Use MMKV for all platforms
+  const storage = new MMKVUserPersistedStorage();
     
   adapter = new UserPersistentOverrideAdapter(storage);
   return adapter;
