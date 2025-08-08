@@ -11,7 +11,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { getUserPersistentOverrideAdapter } from '@/utils/persistedUserAdapter';
 
 // Direct SDK key
-const STATSIG_SDK_KEY = 'YOUR_KEY_HERE';
+const STATSIG_SDK_KEY = 'client-n2RFHU1lmCeAA427FlqXR44afiKmabohcVGw2RfF79t';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
