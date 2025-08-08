@@ -24,22 +24,9 @@ Before running this app, you need:
 npm install --legacy-peer-deps
 ```
 
-**Note**: The `--legacy-peer-deps` flag is required due to dependency conflicts with the Statsig React Native SDK.
+**Note**: The `--legacy-peer-deps` flag is required due to dependency conflicts.
 
-### 2. Set up Environment Variables
-
-Copy the example environment file and update it with your actual values:
-
-```bash
-cp .env.example .env
-```
-
-Update the `.env` file with your actual Statsig SDK key:
-```
-STATSIG_SDK_KEY=your_actual_statsig_client_key_here
-```
-
-### 3. Create Statsig Experiment
+### 2. Create Statsig Experiment
 
 In your Statsig console, create an experiment with the following settings:
 
@@ -50,6 +37,12 @@ In your Statsig console, create an experiment with the following settings:
 
 **Targeting Configuration**:
 - Add a condition: `custom_field` → `qualifyingScore` → `greater than` → `50`
+
+### 3. Update your Statsig client key in Layout.tsx
+
+Replease this line in `_layout.tsx` with your key
+
+`const STATSIG_SDK_KEY = 'YOUR_KEY_HERE';`
 
 ### 4. Start the App
 
